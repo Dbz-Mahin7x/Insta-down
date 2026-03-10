@@ -1,15 +1,23 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
+  "functions": {
+    "api/instagram.js": {
+      "maxDuration": 10,
+      "memory": 1024
     }
-  ],
+  },
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "server.js"
+      "src": "/api/instagram",
+      "dest": "/api/instagram.js"
+    },
+    {
+      "src": "/",
+      "dest": "/api/instagram.js"
+    },
+    {
+      "src": "/api",
+      "dest": "/api/instagram.js"
     }
   ]
 }
