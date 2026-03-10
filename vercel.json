@@ -11,11 +11,5 @@
       "src": "/(.*)",
       "dest": "api/instagram.js"
     }
-  ],
-  "functions": {
-    "api/instagram.js": {
-      "maxDuration": 10,
-      "memory": 1024
-    }
-  }
+  ]
 }
