@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  insta-api:
+    build: .
+    container_name: instagram-scraper-api
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - RATE_LIMIT_WINDOW=900000
+      - RATE_LIMIT_MAX=50
+      - CACHE_TTL=3600
+    volumes:
+      - ./cache:/app/cache
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
