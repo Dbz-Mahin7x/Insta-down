@@ -1,0 +1,11 @@
+{
+  "name": "instagram-scraper-api-vercel",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "node-cache": "^5.1.2"
+  }
+}
